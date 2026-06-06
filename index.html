@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Horizon – Event Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ HEADER ░░ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-block">
+        <span class="logo-icon">◈</span>
+        <div>
+          <h1 class="logo-title">Event Horizon</h1>
+          <p class="logo-tagline">Manage Your Universe of Events</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip" id="totalCount">0 Events</div>
+        <div class="stat-chip upcoming" id="upcomingCount">0 Upcoming</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ░░ MAIN ░░ -->
+  <main class="main-grid">
+
+    <!-- LEFT: ADD EVENT FORM -->
+    <aside class="form-panel">
+      <h2 class="panel-title">+ Add New Event</h2>
+
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input type="text" id="eventName" placeholder="e.g. Tech Summit 2025" autocomplete="off" />
+      </div>
+
+      <div class="form-group">
+        <label for="eventDate">Event Date</label>
+        <input type="date" id="eventDate" />
+      </div>
+
+      <div class="form-group">
+        <label for="eventDesc">Description</label>
+        <textarea id="eventDesc" rows="4" placeholder="Brief description of the event…"></textarea>
+      </div>
+
+      <div class="warning-box" id="warningBox">
+        ⚠ Please fill in all fields before adding.
+      </div>
+
+      <button class="btn-add" id="addEventBtn">Add Event ➜</button>
+
+      <!-- SEARCH -->
+      <div class="search-divider">
+        <span>or search events</span>
+      </div>
+
+      <div class="form-group">
+        <label for="searchInput">Search by Name or Date</label>
+        <input type="text" id="searchInput" placeholder="e.g. Conference or 2025-06…" autocomplete="off" />
+      </div>
+    </aside>
+
+    <!-- RIGHT: EVENT LIST -->
+    <section class="events-panel">
+      <div class="events-header">
+        <h2 class="panel-title">Scheduled Events</h2>
+        <div class="legend">
+          <span class="legend-dot upcoming"></span> Upcoming
+          <span class="legend-dot past"></span> Past
+        </div>
+      </div>
+
+      <div class="events-grid" id="eventsGrid">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <span class="empty-icon">📭</span>
+        <p>No events found. Add one or clear your search!</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="site-footer">
+    <p>Designed &amp; Built by <strong>Muhammad Haris Khan</strong> &nbsp;|&nbsp; CS 224 – Web Technologies &nbsp;|&nbsp; &copy; <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
